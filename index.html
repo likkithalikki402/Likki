@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EduGenie - AI Learning Assistant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    textarea {
+      height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #eff6ff;
+      padding: 18px;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    #output {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 18px;
+      min-height: 100px;
+      line-height: 1.6;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>EduGenie</h1>
+    <p>AI-Powered Learning Assistant</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h2>Learn with EduGenie</h2>
+
+      <label for="feature">Choose a Feature</label>
+
+      <select id="feature">
+        <option value="qna">Question & Answer</option>
+        <option value="explanation">Topic Explanation</option>
+        <option value="summary">Summary</option>
+        <option value="quiz">Quiz</option>
+        <option value="learning">Learning Path</option>
+      </select>
+
+      <label for="question">Enter your question or topic</label>
+
+      <textarea
+        id="question"
+        placeholder="Example: Explain photosynthesis in simple words..."
+      ></textarea>
+
+      <button onclick="generateAnswer()">
+        Generate Answer
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Features</h2>
+
+      <div class="features">
+
+        <div class="feature">
+          📚 Q&A
+        </div>
+
+        <div class="feature">
+          💡 Explanation
+        </div>
+
+        <div class="feature">
+          📝 Quiz
+        </div>
+
+        <div class="feature">
+          📄 Summary
+        </div>
+
+        <div class="feature">
+          🛣️ Learning Path
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Output</h2>
+
+      <div id="output">
+        Your answer will appear here...
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 EduGenie | AI Learning Assistant</p>
+  </footer>
+
+
+  <script>
+
+    function generateAnswer() {
+
+      const feature =
+        document.getElementById("feature").value;
+
+      const question =
+        document.getElementById("question").value.trim();
+
+      const output =
+        document.getElementById("output");
+
+
+      if (question === "") {
+
+        output.innerText =
+          "Please enter a question or topic.";
+
+        return;
+      }
+
+
+      if (feature === "qna") {
+
+        output.innerText =
+          "EduGenie Q&A\n\n" +
+          "Your question:\n" +
+          question +
+          "\n\nAI response will be generated here when the Gemini backend is connected.";
+
+      }
+
+      else if (feature === "explanation") {
+
+        output.innerText =
+          "Topic Explanation\n\n" +
+          "Topic: " +
+          question +
+          "\n\n" +
+          "EduGenie will provide a simple and easy-to-understand explanation when the AI backend is connected.";
+
+      }
+
+      else if (feature === "summary") {
+
+        output.innerText =
+          "Summary\n\n" +
+          "Topic: " +
+          question +
+          "\n\n" +
+          "A concise AI-generated summary will appear here.";
+
+      }
+
+      else if (feature === "quiz") {
+
+        output.innerText =
+          "Quiz\n\n" +
+          "Topic: " +
+          question +
+          "\n\n" +
+          "AI-generated quiz questions will appear here.";
+
+      }
+
+      else if (feature === "learning") {
+
+        output.innerText =
+          "Learning Path\n\n" +
+          "Topic: " +
+          question +
+          "\n\n" +
+          "A personalized learning path will appear here.";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

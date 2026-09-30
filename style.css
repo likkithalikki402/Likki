@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  background: #f3f5fb;
+  color: #1c2b4a;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(740px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+header p {
+  color: #68758b;
+}
+
+.small-title {
+  color: #6254ce;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e1e5ef;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 28px #27385812;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccd3e0;
+  border-radius: 8px;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: #6254ce;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5144b6;
+}
+
+.answer-text {
+  white-space: pre-wrap;
+}
+
+.question {
+  border-top: 1px solid #e1e5ef;
+  padding: 12px 0;
+}
+
+.answer {
+  padding: 10px;
+  background: #f0efff;
+  border-radius: 8px;
+}
+
+.error {
+  color: #9b2525;
+  background: #fffafa;
+}
+
+footer {
+  text-align: center;
+  color: #68758b;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .container {
+    margin: 24px auto;
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
